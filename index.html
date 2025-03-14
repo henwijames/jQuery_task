@@ -74,37 +74,21 @@
         left: 770px;
       }
 
+      #abdomen {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        top: 30%;
+        left: 719px;
+        border: 1px solid red;
+      }
+
       #description {
         position: absolute;
         top: 30%;
         left: 100px;
         width: 200px;
         color: #fff;
-      }
-
-      #head-description #head-description_paragraph {
-        width: 100%;
-        height: auto;
-        background: #e3bc9a;
-        color: white;
-        padding: 10px;
-        border-radius: 10px;
-      }
-
-      #head-description .title {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background: #e3bc9a;
-        padding: 0px 10px;
-        border-radius: 10px;
-        width: 100%;
-        height: 20px;
-      }
-
-      #head-description .title #close {
-        font-size: 20px;
-        cursor: pointer;
       }
     </style>
   </head>
@@ -146,6 +130,11 @@
       extending from the hips to the feet. They provide support, balance, 
       and enable movement such as walking, running, and jumping."
     ></div>
+    <div
+      id="abdomen"
+      data-title="Abdomen"
+      data-description="The abdomen (colloquially called the gut, belly, tummy, midriff, tucky, or stomach[citation needed]) is the front part of the torso between the thorax (chest) and pelvis in humans and in other vertebrates. The area occupied by the abdomen is called the abdominal cavity. In arthropods, it is the posterior tagma of the body; it follows the thorax or cephalothorax.[1]."
+    ></div>
 
     <div class="card w-25 shadow-sm" id="description">
       <h5 class="card-header text-black" id="card-title"></h5>
@@ -159,15 +148,15 @@
     $(document).ready(function () {
       $("#description").hide();
       $("#description_paragraph").hide();
-      $("[id^=head], [id^=arms], [id^=arms2], [id^=legs], [id^=legs2]").hover(
-        function () {
-          let title = $(this).data("title");
-          let desc = $(this).data("description");
-          $("#card-title").text(title);
-          $(".card-text").text(desc);
-          $("#description").fadeIn();
-        }
-      );
+      $(
+        "[id^=head], [id^=arms], [id^=arms2], [id^=legs], [id^=legs2], [id^=abdomen]"
+      ).hover(function () {
+        let title = $(this).data("title");
+        let desc = $(this).data("description");
+        $("#card-title").text(title);
+        $(".card-text").text(desc);
+        $("#description").fadeIn();
+      });
 
       $("#close").click(function () {
         $("#description").hide();
