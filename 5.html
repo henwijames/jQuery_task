@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 5</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      div {
+        margin: 3px;
+        width: 80px;
+        display: none;
+        height: 80px;
+        float: left;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button id="fadeIn">Fade In</button>
+    <button id="fadeOut">Fade Out</button>
+    <br />
+
+    <div id="target-div">target div</div>
+    <script>
+      $(document).ready(function () {
+        $("#fadeIn").on("click", function () {
+          console.log("Fade In");
+          $("#target-div").fadeIn("slow");
+        });
+        $("#fadeOut").on("click", function () {
+          console.log("Fade Out");
+          $("#target-div").fadeOut("slow");
+        });
+      });
+    </script>
+  </body>
+</html>

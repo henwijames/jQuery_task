@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 9</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      #box {
+        width: 100px;
+        height: 100px;
+        background: red;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="animate">Animate</button>
+    <div id="box"></div>
+
+    <script>
+      function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+
+      $("#animate").click(function () {
+        let randomLeft = getRandomInt(0, window.innerWidth - 100);
+        let randomTop = getRandomInt(0, window.innerHeight - 100);
+        $("#box").animate({ left: randomLeft + "px", top: randomTop + "px" });
+      });
+      //$(document).ready(function () {
+      //  $("#animate").click(function () {
+      //    $("#box").animate({ left: "200px" });
+      //  });
+      // });
+    </script>
+  </body>
+</html>

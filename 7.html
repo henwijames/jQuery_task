@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 7</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <style></style>
+  </head>
+  <button id="add">Add Item</button>
+  <button id="remove">Remove Item</button>
+  <ul id="item-list"></ul>
+  <body>
+    <script>
+      $(document).ready(function () {
+        let itemCount = 1;
+        $("#add").on("click", function () {
+          $(`<li>Item ${itemCount}</li>`).appendTo("#item-list");
+          itemCount++;
+        });
+
+        $("#remove").on("click", function () {
+          $("#item-list li:last-child").remove();
+          if (itemCount > 1) {
+            itemCount--;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

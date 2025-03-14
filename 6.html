@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 6</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      div {
+        margin: 3px;
+        width: 80px;
+        display: none;
+        height: 80px;
+        float: left;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button id="fadeOut">Slide Down</button>
+    <button id="fadeIn">Slide Up</button>
+    <br />
+
+    <div id="target-div">target div</div>
+    <script>
+      $(document).ready(function () {
+        $("#fadeIn").on("click", function () {
+          console.log("Slide Up");
+          $("#target-div").slideUp();
+        });
+        $("#fadeOut").on("click", function () {
+          console.log("Slide Down");
+          $("#target-div").slideDown();
+        });
+      });
+    </script>
+  </body>
+</html>

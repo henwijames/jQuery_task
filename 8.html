@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 8</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .mb-2 {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="" id="handleSubmit">
+      <h3>Form Validation</h3>
+      <div class="mb-2">
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="johndoe@gmail.com" />
+      </div>
+
+      <p id="validate" style="color: red">Please fill in the email field.</p>
+      <button type="submit" style="display: block">Submit</button>
+    </form>
+
+    <script>
+      $(document).ready(function () {
+        $("#validate").hide();
+
+        function validateInput() {
+          let email = $("#email").val();
+
+          if (email.length == "") {
+            $("#validate").show();
+
+            setTimeout(() => {
+              $("#validate").hide();
+            }, 2000);
+            return false;
+          } else {
+            $("#validate").hide();
+          }
+        }
+        $("#handleSubmit").on("submit", function (e) {
+          e.preventDefault();
+          validateInput();
+        });
+      });
+    </script>
+  </body>
+</html>

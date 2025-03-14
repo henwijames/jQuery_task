@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 4</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      #showBg {
+        margin-bottom: 10px;
+      }
+
+      .bg-container {
+        width: 500px;
+        height: 500px;
+        border: 1px solid #000;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button id="showBg">Show BG</button>
+
+    <div class="bg-container"></div>
+
+    <script>
+      $(document).ready(function () {
+        $("#showBg").on("click", function () {
+          $(".bg-container").css("background-color", "pink");
+        });
+      });
+    </script>
+  </body>
+</html>

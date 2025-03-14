@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 10</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <button id="generatePassword">Generate Password</button>
+    <p id="generatedPassword"></p>
+    <input type="password" id="password" />
+    <button id="togglePassword">Show/Hide Password</button>
+    <script>
+      $(document).ready(function () {
+        function generateRandomPassword() {
+          const letters =
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+          const numbers = "0123456789";
+          let password = "";
+
+          for (let i = 0; i < 5; i++) {
+            password += letters.charAt(
+              Math.floor(Math.random() * letters.length)
+            );
+          }
+          for (let i = 0; i < 5; i++) {
+            password += numbers.charAt(
+              Math.floor(Math.random() * numbers.length)
+            );
+          }
+
+          //console.log(password);
+          <!-- ! Shuffled -->
+          //console.log(shuffleString(password));
+          //return password;
+          return shuffleString(password);
+        }
+
+        $("#generatePassword").click(function () {
+          const password = generateRandomPassword();
+          $("#password").val(password);
+        });
+
+        // shuffling string
+        function shuffleString(str) {
+          let arr = str.split("");
+          for (let i = arr.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [arr[i], arr[j]] = [arr[j], arr[i]];
+          }
+          return arr.join("");
+        }
+
+        function showPassword() {
+          const passwordField = $("#password");
+
+          const type =
+            passwordField.attr("type") === "password" ? "text" : "password";
+
+          passwordField.attr("type", type);
+          $(this).text(type === "password" ? "Show Password" : "Hide Password");
+        }
+
+        $("#togglePassword").click(function () {
+          showPassword();
+        });
+
+        //console.log(shuffleString("abcdefgh"));
+      });
+    </script>
+  </body>
+</html>

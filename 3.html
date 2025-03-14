@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 3</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .active {
+        display: flex;
+      }
+
+      .faq-answer {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="faq">
+      <div class="faq-question">Question 1</div>
+      <div class="faq-answer">Answer 1</div>
+      <button class="show">Show</button>
+      <button class="hide">Hide</button>
+    </div>
+    <div class="faq">
+      <div class="faq-question">Question 2</div>
+      <div class="faq-answer">Answer 2</div>
+      <button class="show">Show</button>
+      <button class="hide">Hide</button>
+    </div>
+    <div class="faq">
+      <div class="faq-question">Question 3</div>
+      <div class="faq-answer">Answer 3</div>
+      <button class="show">Show</button>
+      <button class="hide">Hide</button>
+    </div>
+    <div class="faq">
+      <div class="faq-question">Question 4</div>
+      <div class="faq-answer">Answer 4</div>
+      <button class="show">Show</button>
+      <button class="hide">Hide</button>
+    </div>
+    <div class="faq">
+      <div class="faq-question">Question 5</div>
+      <div class="faq-answer">Answer 5</div>
+      <button class="show">Show</button>
+      <button class="hide">Hide</button>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        $(".show").on("click", function () {
+          $(".faq-answer").removeClass("active").css("display", "none");
+          $(this)
+            .siblings(".faq-answer")
+            .addClass("active")
+            .css("display", "flex");
+        });
+
+        $(".hide").on("click", function () {
+          $(this)
+            .siblings(".faq-answer")
+            .removeClass("active")
+            .css("display", "none");
+        });
+      });
+    </script>
+  </body>
+</html>
