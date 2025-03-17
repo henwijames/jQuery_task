@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#webgl-canvas {
+  z-index: -999;
+  opacity: 0.8;
+}
+
+img {
+  width: 100%;
+  max-width: 700px;
+}
+
+.parts {
+  cursor: pointer;
+}
+
+#head {
+  position: absolute;
+  width: 80px;
+  height: 100px;
+  top: 4%;
+  z-index: 2;
+}
+
+#arms {
+  position: absolute;
+  width: 50px;
+  height: 220px;
+  top: 20%;
+  left: 670px;
+  z-index: 2;
+}
+#arms2 {
+  position: absolute;
+  width: 50px;
+  height: 220px;
+  top: 20%;
+  left: 820px;
+  z-index: 2;
+}
+
+#legs {
+  position: absolute;
+  width: 50px;
+  height: 300px;
+  top: 52%;
+  left: 715px;
+  z-index: 2;
+}
+#legs2 {
+  position: absolute;
+  width: 50px;
+  height: 300px;
+  top: 52%;
+  left: 770px;
+  z-index: 2;
+}
+
+#abdomen {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 30%;
+  left: 719px;
+  z-index: 2;
+}
+.card {
+  position: absolute;
+}
+#head-description {
+  top: 10%;
+  left: 300px;
+  width: 200px;
+  color: #fff;
+  z-index: 2;
+}
+
+#arms-description {
+  top: 30%;
+  left: 300px;
+  width: 200px;
+  color: #fff;
+  z-index: 2;
+}
+
+#legs-description {
+  top: 60%;
+  left: 300px;
+  width: 200px;
+  color: #fff;
+  z-index: 2;
+}
+
+#legs-body {
+  height: 200px;
+  overflow-y: auto;
+}
+
+#legs-body::-webkit-scrollbar {
+  display: none;
+}
+
+.path {
+  position: absolute;
+  z-index: -2;
+  background-color: #fff;
+}
+.head_path {
+  height: 2px;
+  width: 230px;
+  display: flex;
+  top: 13%;
+  left: 450px;
+}
+
+.arms_path {
+  height: 2px;
+  width: 230px;
+  display: flex;
+  top: 33%;
+  left: 410px;
+}
+
+.legs_path {
+  height: 2px;
+  width: 230px;
+  display: flex;
+  top: 63%;
+  left: 410px;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 20px solid #fff;
+}
+
+.head-arrow {
+  position: absolute;
+  right: -20px;
+  top: -9px;
+}
+
+.arms-arrow {
+  position: absolute;
+  right: -20px;
+  top: -9px;
+}
+
+.legs-arrow {
+  position: absolute;
+  right: -20px;
+  top: -9px;
+}

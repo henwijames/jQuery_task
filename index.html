@@ -24,142 +24,141 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <style>
-      body {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        font-family: Arial, Helvetica, sans-serif;
-      }
-
-      img {
-        width: 100%;
-        max-width: 700px;
-      }
-
-      #head {
-        position: absolute;
-        width: 80px;
-        height: 100px;
-        top: 4%;
-      }
-
-      #arms {
-        position: absolute;
-        width: 50px;
-        height: 300px;
-        top: 20%;
-        left: 670px;
-      }
-      #arms2 {
-        position: absolute;
-        width: 50px;
-        height: 300px;
-        top: 20%;
-        left: 820px;
-      }
-
-      #legs {
-        position: absolute;
-        width: 50px;
-        height: 300px;
-        top: 52%;
-        left: 715px;
-      }
-      #legs2 {
-        position: absolute;
-        width: 50px;
-        height: 300px;
-        top: 52%;
-        left: 770px;
-      }
-
-      #abdomen {
-        position: absolute;
-        width: 100px;
-        height: 100px;
-        top: 30%;
-        left: 719px;
-      }
-
-      #description {
-        position: absolute;
-        top: 30%;
-        left: 100px;
-        width: 200px;
-        color: #fff;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   </head>
   <body>
     <img src="haha.webp" alt="body" />
 
     <div
+      class="parts"
       id="head"
-      data-title="Head"
-      data-description="Head can refer to the upper part of the body, a leader, the top or
+      data-head-title="Head"
+      data-head-description="Head can refer to the upper part of the body, a leader, the top or
           front of something, or a direction of movement. It can also mean
           intelligence or a heading in a document."
     ></div>
     <div
+      class="parts"
       id="arms"
-      data-title="Arms"
-      data-description="Arms are the upper limbs of the human body, extending from
+      data-arms-title="Arms"
+      data-arms-description="Arms are the upper limbs of the human body, extending from
        the shoulders to the hands. They are essential for movement, lifting, holding, 
        and various physical activities"
     ></div>
     <div
+      class="parts"
       id="arms2"
-      data-title="Arms"
-      data-description="Arms are the upper limbs of the human body, extending 
+      data-arms-title="Arms"
+      data-arms-description="Arms are the upper limbs of the human body, extending 
       from the shoulders to the hands. They are essential for movement, lifting, 
       holding, and various physical activities"
     ></div>
     <div
+      class="parts"
       id="legs"
-      data-title="Legs"
-      data-description="Legs are the lower limbs of the human body, extending 
+      data-legs-title="Legs"
+      data-legs-description="Legs are the lower limbs of the human body, extending 
       from the hips to the feet. They provide support, balance, and enable
        movement such as walking, running, and jumping."
     ></div>
     <div
+      class="parts"
       id="legs2"
-      data-title="Legs"
-      data-description="Legs are the lower limbs of the human body, 
+      data-legs-title="Legs"
+      data-legs-description="Legs are the lower limbs of the human body, 
       extending from the hips to the feet. They provide support, balance, 
       and enable movement such as walking, running, and jumping."
     ></div>
     <div
+      class="parts"
       id="abdomen"
       data-title="Abdomen"
-      data-description="The abdomen (colloquially called the gut, belly, tummy, midriff, tucky, or stomach[citation needed]) is the front part of the torso between the thorax (chest) and pelvis in humans and in other vertebrates. The area occupied by the abdomen is called the abdominal cavity. In arthropods, it is the posterior tagma of the body; it follows the thorax or cephalothorax.[1]."
+      data-description="The abdomen (colloquially called the gut, belly, tummy, midriff, tucky, or stomach[citation needed]) is the front part of the torso between the thorax (chest) and pelvis in humans and in other vertebrates. The area occupied by the abdomen is called the abdominal cavity. In arthropods, it is the posterior tagma of the body; it follows the thorax or cephalothorax."
     ></div>
-
-    <div class="card w-25 shadow-sm" id="description">
-      <h5 class="card-header text-black" id="card-title"></h5>
-      <div class="card-body">
-        <p class="card-text text-black"></p>
-        <a href="#" class="btn btn-secondary" id="close">Close</a>
+    <!-- head card -->
+    <div class="card w-10 shadow-sm" id="head-description">
+      <h5
+        class="card-header text-black"
+        id="head-card-title"
+        style="cursor: pointer"
+      ></h5>
+      <div class="card-body" id="head-body">
+        <p class="head-card-text text-black"></p>
+        <a href="#" class="btn btn-secondary" id="head-close">Close</a>
       </div>
     </div>
-  </body>
-  <script>
-    $(document).ready(function () {
-      $("#description").hide();
-      $("#description_paragraph").hide();
-      $(
-        "[id^=head], [id^=arms], [id^=arms2], [id^=legs], [id^=legs2], [id^=abdomen]"
-      ).hover(function () {
-        let title = $(this).data("title");
-        let desc = $(this).data("description");
-        $("#card-title").text(title);
-        $(".card-text").text(desc);
-        $("#description").fadeIn();
-      });
 
-      $("#close").click(function () {
-        $("#description").hide();
-      });
-    });
-  </script>
+    <!-- arms card -->
+    <div class="card w-10 shadow-sm" id="arms-description">
+      <h5
+        class="card-header text-black"
+        id="arms-card-title"
+        style="cursor: pointer"
+      ></h5>
+      <div class="card-body" id="arms-body">
+        <p class="arms-card-text text-black"></p>
+        <a href="#" class="btn btn-secondary" id="arms-close">Close</a>
+      </div>
+    </div>
+
+    <div class="card w-10 shadow-sm" id="legs-description">
+      <h5
+        class="card-header text-black"
+        id="legs-card-title"
+        style="cursor: pointer"
+      ></h5>
+      <div class="card-body" id="legs-body">
+        <p class="legs-card-text text-black"></p>
+        <a href="#" class="btn btn-secondary" id="legs-close">Close</a>
+      </div>
+    </div>
+
+    <div class="head_path path">
+      <div class="head-arrow triangle"></div>
+    </div>
+    <div class="arms_path path">
+      <div class="arms-arrow triangle"></div>
+    </div>
+    <div class="legs_path path">
+      <div class="legs-arrow triangle"></div>
+    </div>
+    <canvas id="webgl-canvas" class="position-absolute"></canvas>
+
+    <!-- vertexShader -->
+    <script id="js-vertex-shader" type="x-shader/x-vertex">
+      attribute vec3 position;
+
+      void main()	{
+        gl_Position = vec4(position, 1.0);
+      }
+    </script>
+
+    <!-- fragmentShader -->
+    <script id="js-fragment-shader" type="x-shader/x-fragment">
+      precision highp float;
+      uniform vec2 resolution;
+      uniform float time;
+      uniform float xScale;
+      uniform float yScale;
+      uniform float distortion;
+
+      void main() {
+        vec2 p = (gl_FragCoord.xy * 2.0 - resolution) / min(resolution.x, resolution.y);
+
+        float d = length(p) * distortion;
+
+        float rx = p.x * (1.0 + d);
+        float gx = p.x;
+        float bx = p.x * (1.0 - d);
+
+        float r = 0.05 / abs(p.y + sin((rx + time) * xScale) * yScale);
+        float g = 0.05 / abs(p.y + sin((gx + time) * xScale) * yScale);
+        float b = 0.05 / abs(p.y + sin((bx + time) * xScale) * yScale);
+
+        gl_FragColor = vec4(r, g, b, 1.0);
+      }
+    </script>
+    <script src="script.js"></script>
+  </body>
 </html>
